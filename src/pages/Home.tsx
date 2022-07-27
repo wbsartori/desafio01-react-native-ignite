@@ -29,12 +29,9 @@ export function Home() {
   }
 
   function handleRemoveTask(id: number) {
-    const idTask = tasks.findIndex((task) => {
-        return task.id === id;
-    });
-
-    const newTasks = tasks.filter((task) => task.id === id);
-    setTasks(newTasks);
+      setTasks(oldstate => oldstate.filter(
+          tasks => tasks.id !== id
+      ));
   }
 
   return (
