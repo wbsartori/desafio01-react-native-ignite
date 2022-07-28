@@ -14,10 +14,10 @@ export function Header({ tasksCounter }: HeaderProps) {
   useEffect(() => {
     if(tasksCounter === 1){
       setTasksCounterText('tarefa');
-    }else{
+    } else {
       setTasksCounterText('tarefas');
     }
-  }, [])
+  }, [tasksCounter])
 
   return (
     <View style={styles.container}>
