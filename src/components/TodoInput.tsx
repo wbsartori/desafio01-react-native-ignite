@@ -10,9 +10,17 @@ export function TodoInput({ addTask }: TodoInputProps) {
    const [task, setTask] = useState('');
 
   function handleAddNewTask() {
-    if(task !== ''){
-      addTask(task);
-    }
+    //Maneira enviada na correção
+    //Faltou limpar o campo e poderia ter feito a validação diferente
+    // if(task !== ''){
+    //   addTask(task);
+    // }
+
+    //Maneira realizada na solução
+    if(!task)
+      return;
+    addTask(task);
+    setTask('');
   }
 
   return (
